@@ -1,0 +1,31 @@
+DROP TABLE IF EXISTS "active_users";
+CREATE TABLE "active_users" (
+                                "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                                "user_id" integer(6,0) NOT NULL DEFAULT 1,
+                                "session_id" text(256,0),
+                                "hash" integer(256,0),
+                                "expires" integer(64,0),
+                                CONSTRAINT "user_id" FOREIGN KEY ("user_id") REFERENCES "users" ("ID") ON DELETE CASCADE ON UPDATE CASCADE
+);
+INSERT INTO "main".sqlite_sequence (name, seq) VALUES ("active_users", '41');
+
+DROP TABLE IF EXISTS "users";
+CREATE TABLE "users" (
+                         "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                         "username" text(128,0),
+                         "name" text(128,0),
+                         "password" text(256,0),
+                         "user_type" integer(2,0) NOT NULL DEFAULT 1
+);
+INSERT INTO "main".sqlite_sequence (name, seq) VALUES ("users", '1');
+INSERT INTO "users" ("id", "username", "name", "password", "user_type") VALUES ('1', 'admin', 'admin', '$2y$10$zH6/dtuHQJgtWRDbKX8Js.H/bcSZyDLOwPD8zdUnxORB6HcG8/QIC', '0');
+
+DROP TABLE IF EXISTS "api_keys";
+CREATE TABLE "api_keys" (
+                            "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            "name" text(128,0),
+                            "key" text(256,0),
+                            "expires" integer(64,0)
+
+);
+INSERT INTO "main".sqlite_sequence (name, seq) VALUES ("api_keys", '1');
