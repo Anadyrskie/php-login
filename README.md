@@ -1,5 +1,5 @@
 # PHP Login System
-This is a simple login system for PHP. It uses a SQLite database to store user information, and has a simple API key system for use with other applications. It comes with a user management panel, and a simple login page.
+This is a simple self-contained login system for PHP. It uses a SQLite database to store user information, and has a simple API key system for use with other applications. It comes with a user management panel, and a simple login page.
 
 
 ## Usage
