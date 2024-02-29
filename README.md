@@ -22,7 +22,7 @@ Users have an integer user type. You can use this for permissions, to restrict a
 ## API Keys
 You can manage API keys in the Userman panel (`userman.php`). 
 
-API keys do not currently have permission scoping, so they can access everything. API Key authentication returns a bool, so if the key is used to access a page that depends on $user variables, the page will crash. This can be fixed by returning a predefined bot user block if needed in the `verify_login.php` file.
+API keys do not currently have permission scoping, so they can access everything. API Key authentication returns a bool, so if the key is used to access a page that depends on `$user` variables, the page will crash. This can be fixed by returning a predefined bot user block if needed in the `verify_login.php` file.
 ```php
 function isLoggedIn()
 {
