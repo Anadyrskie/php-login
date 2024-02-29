@@ -9,6 +9,10 @@ require("verify_login.php");
 $user=isLoggedIn();if($user){ updateExpire($user['id']); } else{ header('location:login.php'); }
 ```
 
+## Config
+You can change the login redirect in `login_config.php` if needed. Default is `index.php`.
+You can also change the session timeout in `login_config.php`. Default is 4 hours.
+
 ## Users
 You can manage users in the Userman panel (`userman.php`). Only user type 0 can access userman.php. Only user type 0 can access userman.php. This can be changed in `userman.php` if needed.
 
